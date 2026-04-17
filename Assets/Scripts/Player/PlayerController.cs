@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float direction;
 
+    [Header("pulo")]
+    [SerializeField ] float jumpForce =13;
+    [SerializeField] float jumpingCutMultipler = 0.05f;
+
+
     Rigidbody2D rig;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetDirection();
+        Jump();
     }
 
     void FixedUpdate()
@@ -42,6 +48,25 @@ public class PlayerController : MonoBehaviour
         if(direction <0)
         {
             transform.eulerAngles = new Vector2(0,180);
+        }
+    }
+
+    void Jump()
+    {
+         if(InputManager.Instance.JumpPressed)
+        {
+            rig.linearVelocity = new Vector2(rig.linearVelocity.x, jumpForce);
+            InputManager.Instance.JumpPressed = false;
+            InputManager.Instance.JumpReleased = false;
+        }
+        if(InputManager.Instance.JumpReleased)
+        {
+            if(rig.linearVelocity.y >0)
+            {
+                rig.linearVelocity = new Vector2(rig.linearVelocity.x, rig.linearVelocity.y*jumpingCutMultipler);
+
+            }
+            InputManager.Instance.JumpReleased = false;
         }
     }
 }
