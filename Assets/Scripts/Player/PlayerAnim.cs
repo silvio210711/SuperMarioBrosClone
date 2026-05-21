@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 
-public class Playeranim : MonoBehaviour
+public class PlayerAnim : MonoBehaviour
 {
+    [SerializeField] int layerWeight;
     Animator anim;
+
+    public int LayerWeight { get => layerWeight; set => layerWeight = value; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +17,7 @@ public class Playeranim : MonoBehaviour
     void Update()
     {
        ChangeAnimation(); 
+       ChangeLayer();
     }
 
     void ChangeAnimation()
@@ -34,6 +38,25 @@ public class Playeranim : MonoBehaviour
                anim.SetInteger("Transition",1); 
             }
 
+        }
+    }
+
+    void ChangeLayer()
+    {
+        if(layerWeight == 0)
+        {
+            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(2, 0);
+        }
+        else if(layerWeight == 1)
+        {
+            anim.SetLayerWeight(1, 1);
+            anim.SetLayerWeight(2, 0);
+        }
+        else if(layerWeight == 2)
+        {
+            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(2, 1);
         }
     }
 }

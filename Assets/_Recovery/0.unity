@@ -70541,7 +70541,7 @@ GameObject:
   - component: {fileID: 1687989997}
   - component: {fileID: 1687989998}
   m_Layer: 0
-  m_Name: Mario
+  m_Name: Mario_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70807,7 +70807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b584224643a14a99ef21f4b7852a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Playeranim
-  layerWeight: 0
 --- !u!61 &1687989998
 BoxCollider2D:
   m_ObjectHideFlags: 0
