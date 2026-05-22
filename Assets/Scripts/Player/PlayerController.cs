@@ -23,13 +23,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetDirection();
-        Jump();
+        if(!GameController.instance.IsPaused)
+        {
+            rig.gravityScale = 3;
+            GetDirection();
+            Jump();
+        }
+        else
+        {
+            rig.linearVelocity = Vector2.zero;
+            rig.gravityScale = 0;
+        }
     }
 
     void FixedUpdate()
     {
-        Move ();
+        if(!GameController.instance.IsPaused)
+            Move ();
     }
 
     void Move()

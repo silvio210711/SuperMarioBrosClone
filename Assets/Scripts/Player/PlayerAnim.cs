@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
     [SerializeField] int layerWeight;
+    [SerializeField] BoxCollider2D littleCollider;
+    [SerializeField] BoxCollider2D bigCollider;
     Animator anim;
 
     public int LayerWeight { get => layerWeight; set => layerWeight = value; }
@@ -16,8 +18,15 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       ChangeAnimation(); 
-       ChangeLayer();
+        if (!GameController.instance.IsPaused)
+        {
+            ChangeAnimation();
+        }
+        else
+        {
+            anim.SetInteger("Transition", 0);
+        }
+        ChangeLayer();
     }
 
     void ChangeAnimation()
@@ -45,6 +54,7 @@ public class PlayerAnim : MonoBehaviour
     {
         if(layerWeight == 0)
         {
+            ChangeCollider(layerWeight);
             anim.SetLayerWeight(1, 0);
             anim.SetLayerWeight(2, 0);
         }
@@ -57,6 +67,19 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.SetLayerWeight(1, 0);
             anim.SetLayerWeight(2, 1);
+        }
+    }
+    void ChangeCollider(int collider)
+    {
+        if(collider == 0)
+        {
+            littleCollider.enabled = true;
+            bigCollider.enabled = false;
+        }
+        else
+        {
+            littleCollider.enabled = false;
+            bigCollider.enabled = true;
         }
     }
 }

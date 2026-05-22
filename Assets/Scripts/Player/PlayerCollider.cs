@@ -16,8 +16,7 @@ public class PlayerCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckCollision();
-        
+        CheckCollision();        
     }
 
     void CheckCollision()
@@ -25,5 +24,18 @@ public class PlayerCollider : MonoBehaviour
         bool isGrounded = Physics2D.OverlapCircle(groundChek.position,radius,groundLayer);
         InputManager.Instance.IsJumping = !isGrounded;
         Debug.DrawRay(groundChek.position, Vector2.down * radius, Color.red);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Mushroom"))
+        { 
+            if(!GameController.instance.IsGrowUp)
+            {
+               GameController.instance.GrowUp(); 
+            }
+            
+            Destroy(collision.gameObject);
+        }
     }
 }
