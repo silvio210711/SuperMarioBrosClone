@@ -8,9 +8,11 @@ public class GameController : MonoBehaviour
     [SerializeField] float changeTime;
     [SerializeField] PlayerAnim playerAnim;
     [SerializeField] bool isGrowUp;
+    [SerializeField] bool isFlower;
 
     public static GameController instance;
      public bool IsGrowUp { get => isGrowUp; }
+     public bool IsFlower{ get => isFlower;}
 
 
     public bool IsPaused { get => isPaused; }
@@ -30,6 +32,20 @@ public class GameController : MonoBehaviour
     {
         isGrowUp = true;
         StartCoroutine(ChangePlayer(0, 1));
+    }
+    public void Flower()
+    {
+        if(isGrowUp)
+        {
+            StartCoroutine(ChangePlayer(1,2));
+            
+        }
+        else
+            {
+                StartCoroutine(ChangePlayer(0,2));
+            }
+        isGrowUp = true;
+        isFlower = true;
     }
 
     IEnumerator ChangePlayer(int actualPlayer, int nextPlayer)

@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] bool jumpPressed;
     [SerializeField] bool jumpReleased;
     [SerializeField] bool isJumping;
+    [SerializeField] bool isFire;
+    [SerializeField] bool isFireButtonPressed;
     Vector2 movimentInput;
     public static InputManager Instance;
 
@@ -14,6 +16,9 @@ public class InputManager : MonoBehaviour
 
     public bool JumpReleased {get => jumpReleased; set => jumpReleased = value;}
     public bool IsJumping {get => isJumping; set => isJumping = value;}
+    public bool IsFire {get => isFire; set => isFire = value;}
+
+     public bool IsFireButtonPressed {get => isFireButtonPressed; set => isFireButtonPressed = value;}
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -35,8 +40,23 @@ public class InputManager : MonoBehaviour
         else
         {
             JumpReleased = true;
-        }
+        }        
     }
+
+    void OnAttack(InputValue value)
+        {
+            if(value.isPressed)
+            {
+                Debug.Log("Apertou");
+                isFire = true;
+
+            }
+            else
+            {
+                Debug.Log("Soltou");
+                isFire = false;
+            }
+        }
         
     public Vector2 GetMovimentInput()
     {

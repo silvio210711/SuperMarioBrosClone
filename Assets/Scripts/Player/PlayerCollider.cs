@@ -7,6 +7,9 @@ public class PlayerCollider : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform groundChek;
     [SerializeField] float radius = 0.2f;
+
+    [SerializeField] GameObject headLittleMario;
+    [SerializeField] GameObject headBigMario;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +37,18 @@ public class PlayerCollider : MonoBehaviour
             {
                GameController.instance.GrowUp(); 
             }
-            
+            headLittleMario.SetActive(false);
+            headBigMario.SetActive(true);
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Flower"))
+        { 
+            if(!GameController.instance.IsFlower)
+            {
+               GameController.instance.Flower(); 
+            }
+            headLittleMario.SetActive(false);
+            headBigMario.SetActive(true);
             Destroy(collision.gameObject);
         }
     }

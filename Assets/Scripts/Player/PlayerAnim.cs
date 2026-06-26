@@ -52,9 +52,9 @@ public class PlayerAnim : MonoBehaviour
 
     void ChangeLayer()
     {
+        ChangeCollider(layerWeight);
         if(layerWeight == 0)
-        {
-            ChangeCollider(layerWeight);
+        {            
             anim.SetLayerWeight(1, 0);
             anim.SetLayerWeight(2, 0);
         }
