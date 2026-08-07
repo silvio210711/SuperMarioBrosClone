@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 466b89059af97dee29215a9f6024105a
+guid: c5dc6d0da13c12f4abb9ee53214147ad
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -109,6 +109,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67a532a91133eb877856dcfc130883c1
-      internalID: -1198588955
+      spriteID: 553debcc91f96cd49a5efc4e09465134
+      internalID: -1534396771
       vertices: []
       indices: 
       edges: []
@@ -172,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29984c990717e51fa9a2a1b26e83496
-      internalID: -1823690654
+      spriteID: 1ff245a2c34ad0e4084ae67b841dbad0
+      internalID: -492790815
       vertices: []
       indices: 
       edges: []
@@ -182,7 +195,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f41b18d0610910ddcb9c15bfbc689175
+    spriteID: 027969d7f4047464795032b05075cdff
     internalID: 0
     vertices: []
     indices: 
@@ -195,8 +208,8 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Background_0: -1955448553306655712
-      Background_1: -1198588955
-      Background_2: -1823690654
+      Background_1: -1534396771
+      Background_2: -492790815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,15 +1,14 @@
-using System;
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
+    [SerializeField] Transform player;
     public float limit;
-    
+
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x > transform.position.x && transform.position.x < limit)
+        if(player.position.x > transform.position.x && player.position.x < limit)
         {
             Move();
         }
@@ -17,6 +16,6 @@ public class FollowCam : MonoBehaviour
 
     void Move()
     {
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 }

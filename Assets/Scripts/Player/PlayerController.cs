@@ -1,14 +1,13 @@
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("movimento")]
+    [Header("Movimento")]
     [SerializeField] float moveSpeed;
     [SerializeField] float direction;
 
-    [Header("pulo")]
-    [SerializeField ] float jumpForce =13;
+    [Header("Pulo")]
+    [SerializeField] float jumpForce = 13;
     [SerializeField] float jumpingCutMultipler = 0.05f;
 
     [Header("Ataque")]
@@ -19,11 +18,13 @@ public class PlayerController : MonoBehaviour
     float directionBall;
 
     Rigidbody2D rig;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();        
+        rig = GetComponent<Rigidbody2D>();
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
             rig.gravityScale = 3;
             GetDirection();
             Jump();
-            if(GameController.instance.IsFlower)
+            if(GameController.instance.IsFlower) 
             {
                 Fire();
             }
@@ -45,67 +46,63 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rig.linearVelocity = Vector2.zero;
             rig.gravityScale = 0;
+            rig.linearVelocity = Vector2.zero;
         }
     }
 
     void FixedUpdate()
     {
-        if(!GameController.instance.IsPaused)
-            Move ();
+        if(!GameController.instance.IsPaused) Move();
     }
 
     void Move()
     {
-        rig.linearVelocity = new Vector2(direction*moveSpeed, rig.linearVelocity.y);
+        rig.linearVelocity = new Vector2(direction * moveSpeed, rig.linearVelocity.y);
     }
 
     void GetDirection()
     {
-        direction = InputManager.Instance.GetMovimentInput().x;
+        direction = InputManager.instance.GetMovementInput().x;
 
-        if(direction >0)
+        if(direction > 0)
         {
             directionBall = 1;
-            transform.eulerAngles = new Vector2(0,0);
+            transform.eulerAngles = new Vector2(0, 0);
         }
-        if(direction <0)
+        if(direction < 0)
         {
             directionBall = -1;
-            transform.eulerAngles = new Vector2(0,180);
+            transform.eulerAngles = new Vector2(0, 180);
         }
     }
 
     void Jump()
     {
-         if(InputManager.Instance.JumpPressed)
+        if(InputManager.instance.JumpPressed)
         {
             rig.linearVelocity = new Vector2(rig.linearVelocity.x, jumpForce);
-            InputManager.Instance.JumpPressed = false;
-            InputManager.Instance.JumpReleased = false;
+            InputManager.instance.JumpPressed = false;
+            InputManager.instance.JumpReleased = false;
         }
-        if(InputManager.Instance.JumpReleased)
+        if(InputManager.instance.JumpReleased)
         {
-            if(rig.linearVelocity.y >0)
+            if(rig.linearVelocity.y > 0)
             {
-                rig.linearVelocity = new Vector2(rig.linearVelocity.x, rig.linearVelocity.y*jumpingCutMultipler);
-
+                rig.linearVelocity = new Vector2(rig.linearVelocity.x, rig.linearVelocity.y * jumpingCutMultipler);
             }
-            InputManager.Instance.JumpReleased = false;
+            InputManager.instance.JumpReleased = false;
         }
-
-        
     }
 
     void Fire()
     {
-        if(InputManager.Instance.IsFire)
+        if(InputManager.instance.IsFire && fireInterval <= 0)
         {
             fireInterval = timeFire;
-            InputManager.Instance.IsFire = false;
+            InputManager.instance.IsFire = false;
             GameObject fire = Instantiate(fireBall, firePoint.position, firePoint.rotation);
-            fire.GetComponent<FireBall>().Direction = directionBall;
+            fire.GetComponent<FireBall>().Direction = directionBall; 
         }
     }
 }

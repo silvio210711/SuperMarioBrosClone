@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a267873deac0bb24863f35f54d5ae31
+guid: fca19fdbbba96214a8b91b6f5420b27f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -109,6 +109,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3b0221c97d281443bf5fa1c459d9cca
-      internalID: 969664489
+      spriteID: ac534875286f8ff488454d50d5aa0a68
+      internalID: -120613131
       vertices: []
       indices: 
       edges: []
@@ -160,7 +173,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ce8f7d995dfe4e38bb7966537d0d3663
+    spriteID: 33530e9cabd769d4c9d71b2600350831
     internalID: 0
     vertices: []
     indices: 
@@ -173,7 +186,7 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       BlocksSceneUnderground_0: 9184047060580572295
-      BlocksSceneUnderground_1: 969664489
+      BlocksSceneUnderground_1: -120613131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

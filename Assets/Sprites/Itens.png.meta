@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7190caf53b082d96918ac0af33eaf02
+guid: d813c089a16d43d46b4c77680505aaea
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -188,6 +188,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -582,8 +595,8 @@ TextureImporter:
         serializedVersion: 2
         x: 199
         y: 74
-        width: 11
-        height: 9
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -888,7 +901,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9460aa826222ef080beeb6950b83f36e
+    spriteID: 0a36655a9d441f8498b9f2278e9549da
     internalID: 0
     vertices: []
     indices: 
@@ -923,6 +936,7 @@ TextureImporter:
       Itens_29: -3595666510534537166
       Itens_3: 4749367379176292346
       Itens_30: -5925312486835263532
+      Itens_31: -347645601
       Itens_4: 3247288509954160731
       Itens_5: -6577593654236450936
       Itens_6: 2409810756578143877

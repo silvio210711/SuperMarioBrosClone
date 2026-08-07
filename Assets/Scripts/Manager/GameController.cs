@@ -1,31 +1,26 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] bool isPaused;
+
     [Header("Player")]
-    [SerializeField] float changeTime;
     [SerializeField] PlayerAnim playerAnim;
+    [SerializeField] float changeTime;
     [SerializeField] bool isGrowUp;
     [SerializeField] bool isFlower;
 
     public static GameController instance;
-     public bool IsGrowUp { get => isGrowUp; }
-     public bool IsFlower{ get => isFlower;}
-
 
     public bool IsPaused { get => isPaused; }
+    public bool IsGrowUp { get => isGrowUp; }
+    public bool IsFlower { get => isFlower; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void GrowUp()
@@ -33,17 +28,17 @@ public class GameController : MonoBehaviour
         isGrowUp = true;
         StartCoroutine(ChangePlayer(0, 1));
     }
+
     public void Flower()
     {
         if(isGrowUp)
         {
-            StartCoroutine(ChangePlayer(1,2));
-            
+            StartCoroutine(ChangePlayer(1, 2));
         }
         else
-            {
-                StartCoroutine(ChangePlayer(0,2));
-            }
+        {
+            StartCoroutine(ChangePlayer(0, 2));
+        }
         isGrowUp = true;
         isFlower = true;
     }
